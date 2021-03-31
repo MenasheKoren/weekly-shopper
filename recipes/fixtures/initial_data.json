@@ -1,0 +1,11 @@
+[
+{
+    "model": "recipes.category",
+    "pk": 1,
+    "fields": {
+        "name": "My First Recipe",
+        "slug": "",
+        "description": "This is a test"
+    }
+}
+]
