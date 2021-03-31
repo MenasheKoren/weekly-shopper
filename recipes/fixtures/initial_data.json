@@ -7,5 +7,107 @@
         "slug": "",
         "description": "This is a test"
     }
+},
+{
+    "model": "recipes.category",
+    "pk": 5,
+    "fields": {
+        "name": "appetizer",
+        "slug": "appetizer",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 6,
+    "fields": {
+        "name": "soup",
+        "slug": "soup",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 7,
+    "fields": {
+        "name": "main course",
+        "slug": "main-course",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 8,
+    "fields": {
+        "name": "dessert",
+        "slug": "dessert",
+        "description": "The yummiest part of the meal"
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 9,
+    "fields": {
+        "name": "sandwich",
+        "slug": "sandwich",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 10,
+    "fields": {
+        "name": "meat",
+        "slug": "meat",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 11,
+    "fields": {
+        "name": "dairy",
+        "slug": "dairy",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 12,
+    "fields": {
+        "name": "breakfast",
+        "slug": "breakfast",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.category",
+    "pk": 13,
+    "fields": {
+        "name": "parve",
+        "slug": "parve",
+        "description": ""
+    }
+},
+{
+    "model": "recipes.recipe",
+    "pk": 1,
+    "fields": {
+        "title": "hard boiled egg",
+        "slug": "hard-boiled-egg",
+        "quantity": "2.00",
+        "ingredients": "eggs",
+        "preparation": "Boil eggs in hot water",
+        "time_for_preparation": "00:10:00",
+        "number_of_portions": 1,
+        "author": 1,
+        "date_created": "2021-03-31T06:24:54.240Z",
+        "date_updated": "2021-03-31T06:55:03.801Z",
+        "difficulty": 1,
+        "category": [
+            12,
+            13
+        ]
+    }
 }
 ]

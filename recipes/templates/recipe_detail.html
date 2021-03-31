@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h2>{{ recipe.title }}</h2>
+    <p>{{ recipe.number_of_portions }} portions.</p>
+    <h3>Ingredients</h3>
+    {{ recipe.quantity }}{{ recipe.ingredients|linebreaks }}
+    <h3>Preparation</h3>
+    {{ recipe.preparation|linebreaks }}
+    <p>Preparation time: {{ recipe.time_for_preparation }}</p>
+{% endblock page_content %}
+    
