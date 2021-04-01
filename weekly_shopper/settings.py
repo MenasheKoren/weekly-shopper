@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6mohr@0tmzqe3*mc&5y@e$o-0sv6=$6zoui9a!v7b(yqcc54+j'
+SECRET_KEY = '&$c-at*fbg4d9t-vh&w1uftdqce5tgv0c_ph3a@_zhrlc48@%g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recipes',
+    'recipes'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'weekly_shopper.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['weekly_shopper/templates/'],
+        'DIRS': ['weekly_shopper/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +76,8 @@ WSGI_APPLICATION = 'weekly_shopper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'recipes',
     }
 }
 
