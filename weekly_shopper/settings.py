@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'weekly_shopper.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['weekly_shopper/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'weekly_shopper/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,10 +75,16 @@ WSGI_APPLICATION = 'weekly_shopper.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
+DATABASE = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'recipes',
+        'ENGINE': "djongo",
+        "CLIENT": {
+           "name": "recipes",
+           "host": "mongodb+srv://menashe:Th1s1s1t@clusterws.zokdl.mongodb.net/recipes",
+           "username": "menashe",
+           "password": "Th1s1s1t",
+           "authMechanism": "SCRAM-SHA-1",
+        },
     }
 }
 
