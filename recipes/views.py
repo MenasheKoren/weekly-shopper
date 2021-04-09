@@ -9,7 +9,7 @@ def recipe_index(request):
         'recipes': recipes
     }
     return render(request, 'recipe_index.html', context)
-    print(f"{datetime.now()}: about to do X", flush=True)
+    
 
 def recipe_detail(request, pk):
     recipe = Recipe.objects.get(pk=pk)
@@ -17,4 +17,4 @@ def recipe_detail(request, pk):
         'recipe': recipe
     }
     return render(request, 'recipe_detail.html', context)
-    print(f"{datetime.now()}: about to do X", flush=True)
+    

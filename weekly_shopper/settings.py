@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'weekly_shopper.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASE = {
+DATABASES = {
     'default': {
         'ENGINE': "djongo",
         "CLIENT": {
