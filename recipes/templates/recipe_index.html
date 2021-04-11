@@ -1,13 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block page_content %}
+<h1>Recipe Index</h1>
+<hr />
+<div class="row">
+  {% for recipe in recipes %}
+  <div class="col-md-4">
+    <div class="card mb-2">
+      <img class="card-img-top" src="{% static 'img/recipe.image' %}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.title }}</h5>
+        <p class="card-text">{{ recipe.description }}</p>
+        <a href="{% url 'recipe_detail' recipe.pk %}" class="btn btn-primary">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
-{% block page_content %}
-    <h1>Recipe Index</h1>
-    <hr>
-    <ul>
-    {% for recipe in recipes.all %}
-     <li><a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a></li>   
-        
-    {% endfor %}
-        
-    </ul>  
 {% endblock page_content %}

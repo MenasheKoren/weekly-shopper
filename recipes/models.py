@@ -38,6 +38,8 @@ class Recipe(models.Model):
     
     title = models.CharField('Title', max_length=255)
     slug = models.SlugField(unique=True)
+    description = models.TextField()
+    image = models.ImageField(upload_to='img/', height_field=None, width_field=None, max_length=None)
     quantity = models.DecimalField('Quantity', max_digits=3, decimal_places=2, help_text='Use up to two decimals')
     ingredients = models.TextField('Ingredients', help_text='One ingredient per line')
     preparation = models.TextField('Preparation')
@@ -52,6 +54,7 @@ class Recipe(models.Model):
     
     difficulty = models.SmallIntegerField(u'Difficulty',
     choices=DIFFICULTIES, default=DIFFICULTY_MEDIUM)
+    
 
     
 
