@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
-
+import djfractions
 
 # Create your models here.
 class Category(models.Model):
@@ -36,12 +36,22 @@ class Recipe(models.Model):
         (DIFFICULTY_HARD, 'hard'),
     )
     
+    
     title = models.CharField('Title', max_length=255)
     slug = models.SlugField(unique=True)
-    description = models.TextField()
+    description = models.TextField('Description', blank=True)
     image = models.ImageField(upload_to='img/', height_field=None, width_field=None, max_length=None)
-    quantity = models.DecimalField('Quantity', max_digits=3, decimal_places=2, help_text='Use up to two decimals')
+    quantity_integer = models.PositiveSmallIntegerField('Quantity', help_text='Only positive whole numbers', null=False)
+    quantity_fraction = djfractions.models.DecimalFractionField(verbose_name='Fraction',
+                                        name=None,
+                                        max_digits=4,
+                                        decimal_places=4,
+                                        limit_denominator=None,
+                                        coerce_thirds=True,
+                                        help_text='Optional fraction',
+                                        null=True)
     ingredients = models.TextField('Ingredients', help_text='One ingredient per line')
+    
     preparation = models.TextField('Preparation')
     time_for_preparation = models.DurationField('Preparation time', help_text='In minutes', blank=True, null=True)
     number_of_portions = models.PositiveIntegerField('Number of portions')

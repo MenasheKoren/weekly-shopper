@@ -6,10 +6,10 @@
   </div>
   <div class="col-md-4" >
     <p>{{ recipe.description }}</p>
-    <strong>Recipe</strong>
-    <p>{{ recipe.number_of_portions }} portions.</p>
+    <h2>Recipe</h2>
+    <p>Portions: {{ recipe.number_of_portions }}</p>
     <h3>Ingredients</h3>
-    {{ recipe.quantity }}{{ recipe.ingredients|linebreaks }}
+    <p>{{ recipe.quantity_integer }}<sup>{{ recipe.quantity_fraction.numerator }}</sup>&frasl;<sub>{{ recipe.quantity_fraction.denominator }}</sub> {{ recipe.ingredients }}</p>
     <h3>Preparation</h3>
     {{ recipe.preparation|linebreaks }}
     <p>Preparation time: {{ recipe.time_for_preparation }}</p>
