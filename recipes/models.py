@@ -40,8 +40,8 @@ class Recipe(models.Model):
     title = models.CharField('Title', max_length=255)
     slug = models.SlugField(unique=True)
     description = models.TextField('Description', blank=True)
-    image = models.ImageField(upload_to='img/', height_field=None, width_field=None, max_length=None)
-    quantity_integer = models.PositiveSmallIntegerField('Quantity', help_text='Only positive whole numbers', null=False)
+    image = models.ImageField(upload_to='static/img/%Y/%m/%d/', height_field=None, width_field=None, max_length=None)
+    quantity_integer = models.PositiveSmallIntegerField('Quantity', help_text='Only positive whole numbers', null=True)
     quantity_fraction = djfractions.models.DecimalFractionField(verbose_name='Fraction',
                                         name=None,
                                         max_digits=4,
@@ -49,7 +49,8 @@ class Recipe(models.Model):
                                         limit_denominator=None,
                                         coerce_thirds=True,
                                         help_text='Optional fraction',
-                                        null=True)
+                                        default=0)
+    
     ingredients = models.TextField('Ingredients', help_text='One ingredient per line')
     
     preparation = models.TextField('Preparation')
